@@ -1,0 +1,19 @@
+
+create table rawmaterial(MILK DOUBLE PRECISION, SUGAR DOUBLE PRECISION, KHOYA DOUBLE PRECISION)
+
+Registration: 
+String query = "insert into clients values(?,?,?,?,?,?,?,?)";
+				    PreparedStatement ps = con.prepareStatement(query);
+				    ps.setString(1,s1);
+				    ps.setString(2, s2);
+				    ps.setString(3, pwd1);
+				    ......so on
+
+Add Material:
+  PreparedStatement ps = cn.prepareStatement("update rawmaterial set MILK="+(ml+d)+" ");
+  PreparedStatement ps = cn.prepareStatement("update rawmaterial set SUGAR="+(sg+d)+" ");
+    ...........so on
+    
+ Home2:
+   ResultSet rs = st.executeQuery("select * from rawmaterial");
+   PreparedStatement ps = cn.prepareStatement("update rawmaterial set MILK="+(ml-ReqMilk)+", SUGAR="+(sg-ReqSugar)+", KHOYA="+(kh-ReqKhoya)+" ");
